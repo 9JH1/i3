@@ -1,3 +1,4 @@
+fastfetch
 zstyle ':z4h:' start-tmux command tmux -u -f ~/.config/i3/conf/tmux.conf new-session -A
 zstyle ':z4h:' auto-update      'no'
 zstyle ':z4h:' auto-update-days '28'

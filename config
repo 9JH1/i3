@@ -1,22 +1,3 @@
-# REQUIRED PACKAGES
-# polybar
-# dunst
-# plank
-# alttab
-# picom
-# feh
-# pywal
-# boomer
-# rofi
-# maim
-# xclip
-# xdotool
-# pywal2alacritty (git clone https://github.com/egeesin/alacritty-color-export)
-# python i3ipc module ( pip install i3ipc --break-system-packages )
-# dmenu_run ( https://github.com/aario/dmenu )
-# OPTIONAL PACKAGES
-# nm-applet
-# blueman-tray
 
 
 # -- BASE SETTINGS
@@ -27,10 +8,13 @@ default_orientation auto
 # -- FOR WINDOW --
 for_window [window_role="alert"] floating enable
 for_window [class="feh"] floating enable
-for_window[title="^Steam$"] floating disable
 for_window [all] title_format "%title  - <span font-family='MonaspiceRN NF' style='italic' weight='bold'>%instance</span> "
 for_window [all] title_window_icon yes
 for_window [all] border normal 5
+
+for_window[class="steam"] floating enable
+for_window[class="steam" title="^Steam$"] floating disable
+
 set $refresh_i3status killall -SIGUSR1 i3status
 
 # -- BASE KEYBINDS --
@@ -56,7 +40,7 @@ bindsym $mod+e layout toggle split
 
 # -- EXEC KEYBINDS --
 bindsym $mod+a exec  "python /home/$USER/.config/i3/src/workspace.py"
-bindsym $mod+r exec ~/.config/rofi/launchers/type-4/launcher.sh
+bindsym $mod+r exec ~/.config/i3/src/rofi.sh
 bindsym $mod+Shift+q exec /home/$USER/.config/i3/src/forcequit.sh
 bindsym $mod+Shift+s exec maim -s -u /home/$USER/Pictures/screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png | xclip -selection clipboard -t image/png -i
 bindsym $mod+Return exec /home/$USER/.config/i3/src/alacritty.sh 
