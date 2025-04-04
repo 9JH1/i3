@@ -1,4 +1,6 @@
-fastfetch
+if [ "$(tmux display-message -p '#{window_panes}')" -le 1 ]; then
+    fastfetch
+fi
 zstyle ':z4h:' start-tmux command tmux -u -f ~/.config/i3/conf/tmux.conf new-session -A
 zstyle ':z4h:' auto-update      'no'
 zstyle ':z4h:' auto-update-days '28'
@@ -24,5 +26,4 @@ compdef _directories md
 # Define aliases.
 alias tree='tree -a -I .git'
 alias ls="${aliases[ls]:-ls} --color=auto"
-alias grep="${alias[ls]:-ls} --color=auto"
 alias neofetch="hypfetch -b fastfetch"

@@ -1,0 +1,33 @@
+
+[global]
+font = Mononoki Nerd Font 12
+markup = full
+format = "<b>%s</b>\n%b"
+icon_position = left
+icon_path = //
+max_icon_size = 64
+show_indicators = false
+separator_height = 2
+padding = 2
+frame_width = 2
+separator_color = frame
+shrink = yes
+mouse_left_click = close_current
+mouse_middle_click = do_action
+mouse_right_click = close_current
+frame_width = 5
+width = (0,1000)
+progress_bar = false
+progress_bar_min_width = (0,1000)
+[urgency_low]
+foreground = "#161012"
+background = "#C77836"
+frame_color = "#DB8E43"
+[urgency_normal]
+foreground = "#c4c3c3"
+background = "#35578A"
+frame_color = "#506F9E"
+[urgency_critical]
+foreground = "#ffffff"
+background = "#ff5050"
+frame_color = "#ff0000"
