@@ -1,6 +1,6 @@
-#feh --bg-fill --no-xinerama --randomize "/drive/SteamLibrary/steamapps/compatdata/244210/pfx/drive_c/users/steamuser/Documents/Assetto Corsa/screens/best";	
-bg="$(cat ~/.fehbg | grep -oP "'\K[^']+(?=')")"  #"$(ls -t /drive/SteamLibrary/steamapps/compatdata/244210/pfx/drive_c/users/steamuser/Documents/Assetto\ Corsa/screens/best/*.* 2>/dev/null | head -n 1)"
-echo $bg
-wal -i "$bg" -n
-feh --bg-fill --no-xinerama "$bg" &
+first_wall="$(ls -t $HOME/Pictures/wallpaper/*.* 2>/dev/null | head -n 1)"
+second_wall="$(ls -t $HOME/Pictures/screens/*.* 2>/dev/null | head -n 1)"
+#bg="$(cat ~/.fehbg | grep -oP "'\K[^']+(?=')")" 
+wal -i "$first_wall" -n
+feh "$first_wall" --bg-fill "$second_wall" --bg-fill
 wal -R -n -q -s

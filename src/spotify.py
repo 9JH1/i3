@@ -136,6 +136,6 @@ try:
 
 except Exception as e:
     if isinstance(e, dbus.exceptions.DBusException):
-        print('Spotify Goes Here :p')
+        print('Spotify here')
     else:
         print(e)

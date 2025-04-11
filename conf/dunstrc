@@ -1,8 +1,8 @@
 
 [global]
-font = Mononoki Nerd Font 12
+font = MonaspiceRN NFM 12
 markup = full
-format = "<b>%s</b>\n%b"
+format = "<b>%s</b>\n<b>%b</b>"
 icon_position = left
 icon_path = //
 max_icon_size = 64
@@ -20,13 +20,13 @@ width = (0,1000)
 progress_bar = false
 progress_bar_min_width = (0,1000)
 [urgency_low]
-foreground = "#161012"
-background = "#C77836"
-frame_color = "#DB8E43"
+foreground = "#2b2837"
+background = "#77A4C7"
+frame_color = "#C293B7"
 [urgency_normal]
-foreground = "#c4c3c3"
-background = "#35578A"
-frame_color = "#506F9E"
+foreground = "#cac9cd"
+background = "#91A3DB"
+frame_color = "#94B5E5"
 [urgency_critical]
 foreground = "#ffffff"
 background = "#ff5050"

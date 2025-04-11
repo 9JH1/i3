@@ -3,9 +3,9 @@ echo $background
 path="$HOME/.config/i3/conf/dunstrc"
 echo "" > $path
 echo "[global]" >> $path
-echo "font = Mononoki Nerd Font 12" >> $path
+echo "font = MonaspiceRN NFM 12" >> $path
 echo "markup = full" >> $path
-echo "format = \"<b>%s</b>\n%b\"" >> $path
+echo "format = \"<b>%s</b>\n<b>%b</b>\"" >> $path
 echo "icon_position = left" >> $path
 echo "icon_path = /"/"" >> $path
 echo "max_icon_size = 64" >> $path
