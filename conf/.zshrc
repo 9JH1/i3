@@ -27,3 +27,15 @@ compdef _directories md
 alias tree='tree -a -I .git'
 alias ls="${aliases[ls]:-ls} --color=auto"
 alias neofetch="hypfetch -b fastfetch"
+
+# pnpm
+export PNPM_HOME="/home/_3hy/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+function cdr() {
+	dirs=(*/)
+	[[ $dirs ]] && cd -- "${dirs[RANDOM%${#dirs[@]}]}"
+}

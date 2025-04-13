@@ -60,6 +60,7 @@ bindsym $mod+b exec --no-startup-id "/home/$USER/.config/i3/src/alacritty_paddin
 exec_always --no-startup-id /home/$USER/.config/i3/src/startup.sh
 
 # -- THEME VARIBLES -- 
+set_from_resource $background     i3wm.background
 set_from_resource $color1         i3wm.color0
 set_from_resource $color1         i3wm.color1
 set_from_resource $color2         i3wm.color2
@@ -75,12 +76,13 @@ set_from_resource $color11        i3wm.color11
 set_from_resource $color12        i3wm.color12
 set_from_resource $color13        i3wm.color13
 set_from_resource $color14        i3wm.color14
+# color3 = accent
 
-# -- CLIENT COLORS --   border     bg        fg        indicator child_border
-client.focused          $color2    $color2   $color7   $color2   $color2
-client.focused_inactive $color5    $color5   $color7   $color5   $color5
-client.unfocused        $color5    $color5   $color7   $color5   $color5 
-client.urgent           $color1    $color1   $color7   $color2   $color2
+# -- CLIENT COLORS --    border         bg           fg        indicator    child_border
+client.unfocused         $background    $background  $color3   $background  $background 
+client.focused_inactive  $background    $background   $color3   $background  $background
+client.focused           $color3    $color3   $background   $color3   $color3
+client.urgent            $color1    $color1   $color7   $color2   $color2
 
 # -- OTHER THEME SETTINGS -- 
 gaps inner 20
