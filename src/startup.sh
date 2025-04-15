@@ -9,6 +9,7 @@ killall blueman-applet
 killall polybar
 killall unclutter
 killall polydock
+killall conky
 
 CONFIG="$HOME/.config/i3/conf/alacritty-padding.toml"
 
@@ -26,4 +27,5 @@ echo '[window.padding]' > "$CONFIG" &
 echo 'y=40' >> "$CONFIG"
 echo 'x=40' >> "$CONFIG"
 polybar -c "/home/$USER/.config/i3/conf/polybar.ini" bar_main & 
-$HOME/.config/i3/src/dunst.sh &
+"$HOME/.config/i3/src/dunst.sh" &
+conky --config "$HOME/.config/i3/conf/conky.conf"
