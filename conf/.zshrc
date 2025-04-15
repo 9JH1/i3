@@ -1,5 +1,6 @@
+
 if [ "$(tmux display-message -p '#{window_panes}')" -le 1 ]; then
-    fastfetch --config "$HOME/.config/i3/conf/fastfetch.jsonc"
+    hyfetch --distro yiffos | lolcat
 fi
 zstyle ':z4h:' start-tmux command tmux -u -f ~/.config/i3/conf/tmux.conf new-session -A
 zstyle ':z4h:' auto-update      'no'

@@ -1,5 +1,3 @@
-
-
 # -- BASE SETTINGS
 set $mod Mod4
 floating_modifier $mod
@@ -11,6 +9,7 @@ for_window [class="feh"] floating enable
 for_window [all] title_format "%title  - <span font-family='MonaspiceRN NF' style='italic' weight='bold'>%instance</span> "
 for_window [all] title_window_icon yes
 for_window [all] border normal 5
+for_window [class="^xwinwrap$"] set_prop WM_CLASS "xwinwrap"
 
 for_window[class="steam"] floating enable
 for_window[class="steam" title="^Steam$"] floating disable
@@ -78,10 +77,10 @@ set_from_resource $color13        i3wm.color13
 set_from_resource $color14        i3wm.color14
 # color3 = accent
 
-# -- CLIENT COLORS --    border         bg           fg        indicator    child_border
-client.unfocused         $background    $background  $color3   $background  $background 
-client.focused_inactive  $background    $background   $color3   $background  $background
-client.focused           $color3    $color3   $background   $color3   $color3
+# -- CLIENT COLORS --    border         bg            fg        indicator    child_border
+client.unfocused         $background    $background   $color1   $background  $background 
+client.focused_inactive  $background    $background   $color1   $background  $background
+client.focused           $background    $background   $color2   $background  $background
 client.urgent            $color1    $color1   $color7   $color2   $color2
 
 # -- OTHER THEME SETTINGS -- 

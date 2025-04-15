@@ -4,7 +4,7 @@ import = ['~/.config/i3/conf/alacritty-padding.toml']
 [window]
 decorations="full"
 dynamic_title=true
-opacity = 1
+opacity=0.7
 
 [font]
 size = 15
@@ -26,20 +26,20 @@ style='italic'
 program = "/bin/sh"
 args = ["-c", "export ZDOTDIR=/home/_3hy/.config/i3/conf/ && zsh"]
 [colors.primary]
-background = "#0B0C0C"
-foreground = "#c2c2c2"
+background = "#02100F"
+foreground = "#bfc3c3"
 
 [colors.cursor]
-text = "#0B0C0C"
-cursor = "#c2c2c2"
+text = "#02100F"
+cursor = "#bfc3c3"
 
 [colors.vi_mode_cursor]
-text = "#0B0C0C"
-cursor = "#c2c2c2"
+text = "#02100F"
+cursor = "#bfc3c3"
 
 [colors.search.matches]
-foreground = "#0B0C0C"
-background = "#c2c2c2"
+foreground = "#02100F"
+background = "#bfc3c3"
 
 [colors.search.focused_match]
 foreground = "CellBackground"
@@ -50,39 +50,39 @@ foreground = "None"
 background = "None"
 
 [colors.footer_bar]
-foreground = "#566a6a"
-background = "#c2c2c2"
+foreground = "#556767"
+background = "#bfc3c3"
 
 [colors.selection]
 text = "CellBackground"
 background = "CellForeground"
 
 [colors.normal]
-black = "#0B0C0C"
-red = "#4F6974"
-green = "#6A6962"
-yellow = "#AB5B49"
-blue = "#97747F"
-magenta = "#998D75"
-cyan = "#5B7783"
-white = "#c2c2c2"
+black = "#02100F"
+red = "#44427A"
+green = "#038A73"
+yellow = "#1E5B9D"
+blue = "#A664E3"
+magenta = "#039490"
+cyan = "#20A099"
+white = "#bfc3c3"
 
 [colors.bright]
-black = "#566a6a"
-red = "#4F6974"
-green = "#6A6962"
-yellow = "#AB5B49"
-blue = "#97747F"
-magenta = "#998D75"
-cyan = "#5B7783"
-white = "#c2c2c2"
+black = "#556767"
+red = "#44427A"
+green = "#038A73"
+yellow = "#1E5B9D"
+blue = "#A664E3"
+magenta = "#039490"
+cyan = "#20A099"
+white = "#bfc3c3"
 
 [colors.dim]
-black = "#c2c2c2"
-red = "#4F6974"
-green = "#998D75"
-yellow = "#AB5B49"
-blue = "#97747F"
-magenta = "#6A6962"
-cyan = "#5B7783"
-white = "#566a6a"
+black = "#bfc3c3"
+red = "#44427A"
+green = "#039490"
+yellow = "#1E5B9D"
+blue = "#A664E3"
+magenta = "#038A73"
+cyan = "#20A099"
+white = "#556767"

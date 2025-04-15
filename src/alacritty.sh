@@ -5,7 +5,7 @@ import = ['~/.config/i3/conf/alacritty-padding.toml']
 [window]
 decorations="full"
 dynamic_title=true
-opacity = 1
+opacity=0.7
 
 [font]
 size = 15
