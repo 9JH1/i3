@@ -8,7 +8,7 @@ dynamic_title=true
 opacity=0.7
 
 [font]
-size = 15
+size = 20
 
 [font.normal]
 family='Mononoki Nerd Font'

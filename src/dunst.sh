@@ -40,4 +40,3 @@ echo "background = \"#ff5050\"" >> $path
 echo "frame_color = \"#ff0000\"" >> $path
 
 dunst -config $path
-sleep 1 && notify-send -e "$(cal)" "$(date +%r)"

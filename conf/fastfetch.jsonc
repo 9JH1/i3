@@ -3,20 +3,14 @@
   "modules": [
     "title",
     "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
     "packages",
-    "display",
-    "wm",
-    "terminal",
+		"terminal",
+		"terminalfont",
+		"de",
+		"wm",
     "cpu",
     "gpu",
     "memory",
-    "swap",
-    "disk",
-    "localip",
 		"colors"
   ]
 }
