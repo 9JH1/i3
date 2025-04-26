@@ -1,9 +1,8 @@
-first_wall="$(ls -t $HOME/Pictures/wallpaper/*.* 2>/dev/null | head -n 1)"
-second_wall="$(ls -t $HOME/Pictures/Games/assettocorsa/*.* 2>/dev/null | head -n 1)"
-#bg="$(cat ~/.fehbg | grep -oP "'\K[^']+(?=')")" 
+#first_wall="$(ls -t $HOME/Pictures/wallpaper/*.* 2>/dev/null | head -n 1)"
+first_wall=$(find "/drive/.say gex" | sort -R | head -n 1)
+echo "background one: $first_wall"
 wal -i "$first_wall" -n -a 92
-feh "$first_wall" --bg-fill "$second_wall" --bg-fill
-
-# -- video-background --
-#killall mpv xwinwrap
-#wallpaper-engine -p /home/$USER/Videos/backgrounds/rei.mp4 -sx 1920 -sy 1080 -z 0
+source ~/.cache/wal/colors.sh
+hex="$color3"
+echo "background two: $hex"
+printf "P6\n1 1\n255\n\\x${hex:1:2}\\x${hex:3:2}\\x${hex:5:2}" | feh --bg-scale "$first_wall" -

@@ -20,13 +20,13 @@ width = (0,1000)
 progress_bar = false
 progress_bar_min_width = (0,1000)
 [urgency_low]
-foreground = "#1E5B9D"
-background = "#02100F"
-frame_color = "#038A73"
+foreground = "#CAB4A2"
+background = "#100a08"
+frame_color = "#B9B4AC"
 [urgency_normal]
-foreground = "#1E5B9D"
-background = "#02100F"
-frame_color = "#038A73"
+foreground = "#CAB4A2"
+background = "#100a08"
+frame_color = "#B9B4AC"
 [urgency_critical]
 foreground = "#ffffff"
 background = "#ff5050"

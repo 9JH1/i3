@@ -1,11 +1,10 @@
 read -r -d '' ALACRITTY_CONFIG << EOM
 [general]
-import = ['~/.config/i3/conf/alacritty-padding.toml']
+import = ['~/.config/i3/conf/alacritty-extra.toml']
 
 [window]
 decorations="full"
 dynamic_title=true
-opacity=0.7
 
 [font]
 size = 20

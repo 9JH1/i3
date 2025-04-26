@@ -1,3 +1,4 @@
+#!/bin/python
 from enum import Enum
 
 from i3ipc import Connection

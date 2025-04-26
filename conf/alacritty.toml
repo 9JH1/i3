@@ -1,10 +1,9 @@
 [general]
-import = ['~/.config/i3/conf/alacritty-padding.toml']
+import = ['~/.config/i3/conf/alacritty-extra.toml']
 
 [window]
 decorations="full"
 dynamic_title=true
-opacity=0.7
 
 [font]
 size = 20
@@ -26,20 +25,20 @@ style='italic'
 program = "/bin/sh"
 args = ["-c", "export ZDOTDIR=/home/_3hy/.config/i3/conf/ && zsh"]
 [colors.primary]
-background = "#02100F"
-foreground = "#bfc3c3"
+background = "#151321"
+foreground = "#c4c4c7"
 
 [colors.cursor]
-text = "#02100F"
-cursor = "#bfc3c3"
+text = "#151321"
+cursor = "#c4c4c7"
 
 [colors.vi_mode_cursor]
-text = "#02100F"
-cursor = "#bfc3c3"
+text = "#151321"
+cursor = "#c4c4c7"
 
 [colors.search.matches]
-foreground = "#02100F"
-background = "#bfc3c3"
+foreground = "#151321"
+background = "#c4c4c7"
 
 [colors.search.focused_match]
 foreground = "CellBackground"
@@ -50,39 +49,39 @@ foreground = "None"
 background = "None"
 
 [colors.footer_bar]
-foreground = "#556767"
-background = "#bfc3c3"
+foreground = "#615e74"
+background = "#c4c4c7"
 
 [colors.selection]
 text = "CellBackground"
 background = "CellForeground"
 
 [colors.normal]
-black = "#02100F"
-red = "#44427A"
-green = "#038A73"
-yellow = "#1E5B9D"
-blue = "#A664E3"
-magenta = "#039490"
-cyan = "#20A099"
-white = "#bfc3c3"
+black = "#151321"
+red = "#CD3564"
+green = "#A44F6F"
+yellow = "#D65775"
+blue = "#7B6983"
+magenta = "#A16E89"
+cyan = "#E86E8C"
+white = "#c4c4c7"
 
 [colors.bright]
-black = "#556767"
-red = "#44427A"
-green = "#038A73"
-yellow = "#1E5B9D"
-blue = "#A664E3"
-magenta = "#039490"
-cyan = "#20A099"
-white = "#bfc3c3"
+black = "#615e74"
+red = "#CD3564"
+green = "#A44F6F"
+yellow = "#D65775"
+blue = "#7B6983"
+magenta = "#A16E89"
+cyan = "#E86E8C"
+white = "#c4c4c7"
 
 [colors.dim]
-black = "#bfc3c3"
-red = "#44427A"
-green = "#039490"
-yellow = "#1E5B9D"
-blue = "#A664E3"
-magenta = "#038A73"
-cyan = "#20A099"
-white = "#556767"
+black = "#c4c4c7"
+red = "#CD3564"
+green = "#A16E89"
+yellow = "#D65775"
+blue = "#7B6983"
+magenta = "#A44F6F"
+cyan = "#E86E8C"
+white = "#615e74"

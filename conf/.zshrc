@@ -12,7 +12,6 @@ zstyle ':z4h:' start-tmux command tmux -u -f ~/.config/i3/conf/tmux.conf new-ses
 # Only show fastfetch if not already inside tmux, and not being launched by z4h for tmux
 
 get_remaining_lines() {
-  # Ask tmux for cursor position
   local pos
   pos=$(tmux display-message -p '#{cursor_y}')
   echo $(( LINES - pos ))
@@ -27,7 +26,7 @@ if [ -n "$TMUX" ] && [ "$(tmux display-message -p '#{pane_index}')" = "0" ] && [
 		fastfetch=$(fastfetch --logo arch_old --config "$HOME/.config/i3/conf/fastfetch.jsonc")
 
 		if [[ $(fastfetch | wc -L) -le $(tput cols) ]]; then 
-			echo $fastfetch | lolcat > /dev/tty
+			echo $fastfetch | lolcat -a -s 2000 > /dev/tty
 			ABSOLUTE_SWITCH=1
 		fi
     
@@ -75,5 +74,5 @@ function cdr() {
 
 # Define aliases.
 alias tree='tree -a -I .git'
-alias ls="${aliases[ls]:-ls} --color=auto"
+alias ls="${aliases[ls]:-ls} --color=auto -r -t"
 alias co="python -m pygmentize"
