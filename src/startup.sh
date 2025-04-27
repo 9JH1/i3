@@ -7,11 +7,10 @@ killall nm-applet
 killall blueman-applet
 killall polybar
 killall unclutter
-killall polydock
 killall conky
 
 CONFIG="$HOME/.config/i3/conf/alacritty-padding.toml"
-
+"$HOME/.config/i3/src/dunst.sh" &&
 xrdb -merge ~/.Xresources & 
 /home/$USER/.config/i3/src/background.sh &
 
@@ -27,4 +26,3 @@ echo 'x=40' >> "$CONFIG"
 polybar -c "/home/$USER/.config/i3/conf/polybar.ini" bar_main & 
 conky --config "$HOME/.config/i3/conf/conky.conf" &
 "$HOME/.config/i3/src/screen.sh" &
-"$HOME/.config/i3/src/dunst.sh"

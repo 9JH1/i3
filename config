@@ -10,8 +10,6 @@ for_window [all] title_format "%title  - <span font-family='MonaspiceRN NF' styl
 for_window [all] title_window_icon yes
 for_window [all] border normal 5
 for_window [class="^xwinwrap$"] set_prop WM_CLASS "xwinwrap"
-for_window [class="Scarlatti"] border none
-for_window [class="Scarlatti"] floating enable 
 for_window[class="steam"] floating enable
 for_window[class="steam" title="^Steam$"] floating disable
 
