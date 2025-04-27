@@ -25,20 +25,20 @@ style='italic'
 program = "/bin/sh"
 args = ["-c", "export ZDOTDIR=/home/_3hy/.config/i3/conf/ && zsh"]
 [colors.primary]
-background = "#111313"
-foreground = "#c3c4c4"
+background = "#07080F"
+foreground = "#c1c1c3"
 
 [colors.cursor]
-text = "#111313"
-cursor = "#c3c4c4"
+text = "#07080F"
+cursor = "#c1c1c3"
 
 [colors.vi_mode_cursor]
-text = "#111313"
-cursor = "#c3c4c4"
+text = "#07080F"
+cursor = "#c1c1c3"
 
 [colors.search.matches]
-foreground = "#111313"
-background = "#c3c4c4"
+foreground = "#07080F"
+background = "#c1c1c3"
 
 [colors.search.focused_match]
 foreground = "CellBackground"
@@ -49,39 +49,39 @@ foreground = "None"
 background = "None"
 
 [colors.footer_bar]
-foreground = "#5a6e6e"
-background = "#c3c4c4"
+foreground = "#565969"
+background = "#c1c1c3"
 
 [colors.selection]
 text = "CellBackground"
 background = "CellForeground"
 
 [colors.normal]
-black = "#111313"
-red = "#95662D"
-green = "#897565"
-yellow = "#7E8376"
-blue = "#A9822C"
-magenta = "#978877"
-cyan = "#B3A38C"
-white = "#c3c4c4"
+black = "#07080F"
+red = "#37536C"
+green = "#44637B"
+yellow = "#1F299B"
+blue = "#4D6D8B"
+magenta = "#3042C2"
+cyan = "#5965E1"
+white = "#c1c1c3"
 
 [colors.bright]
-black = "#5a6e6e"
-red = "#95662D"
-green = "#897565"
-yellow = "#7E8376"
-blue = "#A9822C"
-magenta = "#978877"
-cyan = "#B3A38C"
-white = "#c3c4c4"
+black = "#565969"
+red = "#37536C"
+green = "#44637B"
+yellow = "#1F299B"
+blue = "#4D6D8B"
+magenta = "#3042C2"
+cyan = "#5965E1"
+white = "#c1c1c3"
 
 [colors.dim]
-black = "#c3c4c4"
-red = "#95662D"
-green = "#978877"
-yellow = "#7E8376"
-blue = "#A9822C"
-magenta = "#897565"
-cyan = "#B3A38C"
-white = "#5a6e6e"
+black = "#c1c1c3"
+red = "#37536C"
+green = "#3042C2"
+yellow = "#1F299B"
+blue = "#4D6D8B"
+magenta = "#44637B"
+cyan = "#5965E1"
+white = "#565969"
