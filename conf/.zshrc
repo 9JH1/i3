@@ -28,8 +28,9 @@ if [ -n "$TMUX" ] && [ "$(tmux display-message -p '#{pane_index}')" = "0" ] && [
 		if [[ $(fastfetch | wc -L) -le $(tput cols) ]]; then 
 			echo $fastfetch | lolcat -a -s 2000 > /dev/tty
 			ABSOLUTE_SWITCH=1
+		else
+			echo "Terminal too small, change font size"
 		fi
-    
 		if [[ $ABSOLUTE_SWITCH -eq 1 ]]; then
     	read < /dev/tty
 			for i in {0..$((
