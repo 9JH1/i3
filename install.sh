@@ -1,6 +1,6 @@
 #!/bin/bash 
 echo "Installing Dependancies.."
-if yay -S\
+if yay -Syy\
 	nerdfonts-installer-bin\
 	rofi\
 	lolcat\
@@ -30,7 +30,7 @@ if yay -S\
 	--noconfirm --quiet 2>/dev/null; then
 	echo "Dependancies Installed"
 	echo "Installing Nerd Fonts"
-	if yes 46 43  | nerdfonts-installer 2>./nerdinstaller.log; then # install mononoki & monaspice
+	if yes 46 43  | nerdfonts-installer 2>/dev/null; then # install mononoki & monaspice
 		echo "Installed Mononoki Nerd Font"
 		echo "Installed Monaspice Nerd Font"
 
@@ -50,7 +50,5 @@ if yay -S\
 		echo "Successfully Installed!"
 	else
 		echo "nerdfont-installer failed:"
-		cat ./nerdinstaller.log
-		rm -rf ./nerdinstaller.log
 	fi 
 fi
