@@ -64,7 +64,7 @@ bindsym $mod+z exec boomer
 bindsym $mod+x exec betterlockscreen --lock blur
 bindsym $mod+b exec --no-startup-id "/home/$USER/.config/i3/src/alacritty_extra.sh -padding"
 bindsym $mod+Shift+b exec --no-startup-id "/home/$USER/.config/i3/src/alacritty_extra.sh -opacity"
-bindsym $mod+Shift+x exec shutdown now
+bindsym $mod+Ctrl+x exec shutdown now
 
 # -- EXEC LINES --
 exec_always --no-startup-id /home/$USER/.config/i3/src/startup.sh

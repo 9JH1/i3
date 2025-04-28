@@ -7,7 +7,7 @@ decorations="full"
 dynamic_title=true
 
 [font]
-size = 20
+size = 15
 
 [font.normal]
 family='Mononoki Nerd Font'

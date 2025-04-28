@@ -32,13 +32,16 @@ The terminal used is Alacritty, Tmux runs nested in alacritty with ZSH as the sh
 ## Installation
 #### 1. the following are required for all scripts to work;
 - rofi
+- feh 
+- nitrogen
 - lolcat
 - boomer
+- playerctl
 - i3wm
 - betterlockscreen
 - dunst
 - rofi
-- picom
+- picom (arian8j2 fork)
 - polybar
 - fastfetch
 - wmctrl

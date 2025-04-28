@@ -4,11 +4,12 @@ if yay -Syy\
 	nerdfonts-installer-bin\
 	rofi\
 	lolcat\
+	playerctl\
 	boomer\
 	betterlockscreen\
 	dunst\
 	rofi\
-	picom\
+	picom-arian8j2-git\
 	polybar\
 	fastfetch\
 	wmctrl\
@@ -19,6 +20,8 @@ if yay -Syy\
 	dbus\
 	alacritty\
 	zsh\
+	feh\ 
+	nitrogen\
 	alttab\
 	snixembed\
 	network-manager-applet\
