@@ -2,7 +2,7 @@
 > this repo is my daily driver and is updated frequently keep that in mind when cloning.
 ## Features
 ### Desktop:
-This config uses pywal to theme all of its UI, this includes Polybar, Rofi, Dunst, Alacritty, Zsh, Tmux and more. This repo includes autostarting bluetooth and network applets along with a rich information theme on polybar. Multiple monitors are supported where the background is set to a solid color for all non-primary displays. this color is taken from the current background so everything still aligns with the theme. Here is a list of keybinds that I've added, these are only keybinds of significance that way I dont have to write a long list of keybinds :D:
+this repo now contains WINDOW ANIMATIONS and WINDOW TILING similar to hyprland This config uses pywal to theme all of its UI, this includes Polybar, Rofi, Dunst, Alacritty, Zsh, Tmux and more. This repo includes autostarting bluetooth and network applets along with a rich information theme on polybar. Multiple monitors are supported where the background is set to a solid color for all non-primary displays. this color is taken from the current background so everything still aligns with the theme. Here is a list of keybinds that I've added, these are only keybinds of significance that way I dont have to write a long list of keybinds :D :
 |Keybind|Description|
 |-|-|
 | `$mod+Shift+f` | toggles global fullscreen ( fullscreen program over ALL monitors) | 
