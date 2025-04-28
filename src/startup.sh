@@ -7,9 +7,7 @@ killall nm-applet
 killall blueman-applet
 killall polybar
 killall unclutter
-killall conky
 killall autotiling
-
 xrdb -merge ~/.Xresources & 
 /home/$USER/.config/i3/src/background.sh
 "$HOME/.config/i3/src/dunst.sh" & 
@@ -21,5 +19,4 @@ blueman-applet &
 unclutter --timeout 0.5 &
 autotiling &
 polybar -c "/home/$USER/.config/i3/conf/polybar.ini" bar_main & 
-conky --config "$HOME/.config/i3/conf/conky.conf" &
 "$HOME/.config/i3/src/screen.sh" &

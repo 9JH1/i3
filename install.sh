@@ -27,7 +27,6 @@ if yay -Syy\
 	network-manager-applet\
 	blueman\
 	unclutter\
-	conky\
 	python-pywal16\
 	tmux\
 	--noconfirm --quiet 2>/dev/null; then
