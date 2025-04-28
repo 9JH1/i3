@@ -76,4 +76,4 @@ function cdr() {
 # Define aliases.
 alias tree='tree -a -I .git'
 alias ls="${aliases[ls]:-ls} --color=auto -r -t"
-alias co="python -m pygmentize"
+alias ccat="pygmentize"
