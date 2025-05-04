@@ -47,7 +47,6 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+r restart
-
 # -- LAYOUT KEYBINDS --
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -56,6 +55,7 @@ bindsym $mod+e layout toggle split
 # -- EXEC KEYBINDS --
 bindsym $mod+a exec  "python /home/$USER/.config/i3/src/workspace.py"
 bindsym $mod+r exec ~/.config/i3/src/rofi.sh
+bindsym $mod+t exec ~/.config/i3/src/float.sh
 bindsym $mod+Shift+q exec /home/$USER/.config/i3/src/forcequit.sh
 bindsym $mod+Shift+s exec /home/$USER/.config/i3/src/screenshot.sh
 bindsym $mod+Return exec /home/$USER/.config/i3/src/alacritty.sh 

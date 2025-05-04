@@ -8,6 +8,9 @@ killall blueman-applet
 killall polybar
 killall unclutter
 killall autotiling
+killall plank 
+killall conky 
+mod=""
 xrdb -merge ~/.Xresources & 
 /home/$USER/.config/i3/src/background.sh
 "$HOME/.config/i3/src/dunst.sh" & 
@@ -18,5 +21,10 @@ nm-applet &
 blueman-applet &
 unclutter --timeout 0.5 &
 autotiling &
-polybar -c "/home/$USER/.config/i3/conf/polybar.ini" bar_main & 
+polybar -c "/home/$USER/.config/i3/conf/polybar$mod.ini" bar_main & 
 "$HOME/.config/i3/src/screen.sh" &
+
+if [ "$mod" = "-laptop" ]; then
+	plank & 
+	conky &
+fi
