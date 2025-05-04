@@ -1,4 +1,6 @@
-#!/bin/bash 
+#!/bin/bash
+echo "Updating System.."
+yay -Syyu #
 echo "Installing Dependancies.."
 if yay -Syy\
 	nerdfonts-installer-bin\
