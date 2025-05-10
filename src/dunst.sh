@@ -1,42 +1,39 @@
 source "$HOME/.cache/wal/colors.sh"
-echo $background
-path="$HOME/.config/i3/conf/dunstrc"
-echo "" > $path
-echo "[global]" >> $path
-echo "font = MonaspiceRN NFM 12" >> $path
-echo "markup = full" >> $path
-echo "format = \"<b>%s</b>\n<b>%b</b>\"" >> $path
-echo "icon_position = left" >> $path
-echo "icon_path = /"/"" >> $path
-echo "max_icon_size = 64" >> $path
-echo "show_indicators = false" >> $path
-echo "separator_height = 2" >> $path
-echo "padding = 2" >> $path
-echo "frame_width = 2" >> $path
-echo "separator_color = frame" >> $path
-echo "shrink = yes" >> $path
-echo "mouse_left_click = close_current" >> $path
-echo "mouse_middle_click = do_action" >> $path
-echo "mouse_right_click = close_current" >> $path
-echo "frame_width = 5" >> $path
-echo "width = (0,1000)" >> $path
-echo "progress_bar = false" >> $path
-echo "progress_bar_min_width = (0,1000)" >> $path
+read -r -d '' DUNSTRC << EOM
+[global]
+font = MonaspiceRN NFM 12
+markup = full
+format = "<b>%s</b>\n<b>%b</b>"
+icon_position = left
+icon_path = /usr/share/icons/
+max_icon_size = 64
+show_indicators = false
+separator_height = 2
+padding = 2
+frame_width = 2
+separator_color = frame
+shrink = yes
+mouse_left_click = close_current
+mouse_middle_click = do_action
+mouse_right_click = close_current
+width = (0,1000)
+progress_bar = false
+progress_bar_min_width = (0,1000)
 
-echo "[urgency_low]" >> $path
+[urgency_low]
+foreground = "${color3:-#ffffff}"
+background = "${color0:-#000000}"
+frame_color = "${color2:-#888888}"
 
-echo "foreground = \"$color3\"" >> $path
-echo "background = \"$color0\"" >> $path
-echo "frame_color = \"$color2\"" >> $path
+[urgency_normal]
+foreground = "${color3:-#ffffff}"
+background = "${color0:-#000000}"
+frame_color = "${color2:-#888888}"
 
-echo "[urgency_normal]" >> $path
-echo "foreground = \"$color3\"" >> $path
-echo "background = \"$color0\"" >> $path
-echo "frame_color = \"$color2\"" >> $path
+[urgency_critical]
+foreground = "#ffffff"
+background = "#ff5050"
+frame_color = "#ff0000"
+EOM
 
-echo "[urgency_critical]" >> $path
-echo "foreground = \"#ffffff\"" >> $path
-echo "background = \"#ff5050\"" >> $path
-echo "frame_color = \"#ff0000\"" >> $path
-
-dunst -config $path
+dunst -config <(echo "$DUNSTRC")

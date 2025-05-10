@@ -5,6 +5,7 @@ echo "Installing Dependancies.."
 if yay -Syy\
 	nerdfonts-installer-bin\
 	rofi\
+	jgmenu\
 	lolcat\
 	playerctl\
 	boomer\
