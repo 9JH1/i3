@@ -1,5 +1,5 @@
 #!/bin/bash
-first_wall=$(find "/home/$USER/Pictures/Wallpapers" -type f  -maxdepth 1 | sort -R | head -n 1)
+first_wall=$(find "/home/$USER/Pictures/Wallpapers" -type f  -maxdepth 2 | sort -R | head -n 1)
 export XDG_CACHE_HOME="/home/$USER/.cache"
 wal -i "$first_wall" -n -a 92 -q
 source "/home/$USER/.cache/wal/colors.sh"
