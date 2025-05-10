@@ -67,8 +67,7 @@ bindsym $mod+b            exec --no-startup-id "/home/$USER/.config/i3/src/alacr
 bindsym $mod+Shift+b      exec --no-startup-id "/home/$USER/.config/i3/src/alacritty_extra.sh -opacity"
 bindsym $mod+Ctrl+Shift+x exec --no-startup-id "shutdown now"
 bindsym $mod+Shift+t      exec --no-startup-id "/home/$USER/.config/i3/src/background.sh" 
-bindsym $mod+m            exec --no-startup-id "maim -u  /tmp/screen.png && i3lock -i /tmp/screen.png && rm /tmp/screen.png
-"
+bindsym $mod+m            exec --no-startup-id "maim -u  /tmp/screen.png && i3lock -i /tmp/screen.png && rm /tmp/screen.png"
 # -- SPECIAL KEYBINDS -- 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
