@@ -12,7 +12,9 @@ while [ 1==1 ]; do
 		redshift -x
 		for ((i = 0; i < size/3; i++)); do
 			redshift -o -O $((current-(step*(i+1))))
-			sleep 10
+			echo "index $i/$((size/3))"
+			sleep 5
+			
 		done
 	else
 		echo "Stopping Redshift"
