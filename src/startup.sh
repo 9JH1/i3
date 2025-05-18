@@ -8,7 +8,7 @@ killall polybar
 killall unclutter
 killall autotiling
 
-mod=""
+mod="-laptop"
 "$HOME/.config/i3/src/screen.sh" &
 /home/$USER/.config/i3/src/wal.sh > /home/$USER/.config/i3/background_log.txt
 snixembed &
