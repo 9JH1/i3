@@ -70,6 +70,20 @@ function cdd(){
 # move to last cd'd dir
 cds
 
+rrl() {
+    if [ -z "$1" ]; then
+        echo "Usage: select_n_files <number_of_files>"
+        return 1
+    fi
+
+    N="$1"
+
+    # Find all regular files, shuffle them, and take N
+    find . | shuf | head -n "$N"
+}
+
+
+
 function cdr() {
 	dirs=(*/)
 	[[ $dirs ]] && cd -- "${dirs[RANDOM%${#dirs[@]}]}"

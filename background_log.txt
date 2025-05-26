@@ -1,19 +1,19 @@
-]P00d0d0d
-                 ]P134486C
-                 ]P2594553
-                 ]P39F5141
-                 ]P49E5959
-                 ]P52A3B8D
-                 ]P64A5A99
-                 ]P799c4cb
-                 ]P86b898e
-                 ]P934486C
-                 ]PA594553
-                 ]PB9F5141
-                 ]PC9E5959
-                 ]PD2A3B8D
-                 ]PE4A5A99
-                 ]PF99c4cb
+]P002100F
+                 ]P144427A
+                 ]P2038A73
+                 ]P31E5B9D
+                 ]P4A664E3
+                 ]P5039490
+                 ]P620A099
+                 ]P7bfc3c3
+                 ]P8556767
+                 ]P944427A
+                 ]PA038A73
+                 ]PB1E5B9D
+                 ]PCA664E3
+                 ]PD039490
+                 ]PE20A099
+                 ]PFbfc3c3
                  c
 Building theme at /home/_3hy/.themes/oomox-colors-oomox
 
@@ -28,19 +28,19 @@ rm -f "gtk-3.0/gtk.gresource"
 rm -f "gtk-3.20/gtk.gresource"
 make[1]: Leaving directory '/home/_3hy/.themes/oomox-colors-oomox'
 make[1]: Leaving directory '/home/_3hy/.themes/oomox-colors-oomox'
-make gresource_gtk320
 make gresource_gtk3
+make gresource_gtk320
 make[1]: Entering directory '/home/_3hy/.themes/oomox-colors-oomox'
 mkdir -p "gtk-3.0/dist"
 make[1]: Entering directory '/home/_3hy/.themes/oomox-colors-oomox'
 mkdir -p "gtk-3.20/dist"
-sassc -I "gtk-3.20/scss" "gtk-3.20/scss/gtk.scss" "gtk-3.20/dist/gtk.css"
 sassc -I "gtk-3.0/scss" "gtk-3.0/scss/gtk.scss" "gtk-3.0/dist/gtk.css"
+sassc -I "gtk-3.20/scss" "gtk-3.20/scss/gtk.scss" "gtk-3.20/dist/gtk.css"
 sassc -I "gtk-3.20/scss" "gtk-3.20/scss/gtk-dark.scss" "gtk-3.20/dist/gtk-dark.css"
 sassc -I "gtk-3.0/scss" "gtk-3.0/scss/gtk-dark.scss" "gtk-3.0/dist/gtk-dark.css"
 glib-compile-resources --sourcedir="gtk-3.20" "gtk-3.20/gtk.gresource.xml"
 glib-compile-resources --sourcedir="gtk-3.0" "gtk-3.0/gtk.gresource.xml"
 make[1]: Leaving directory '/home/_3hy/.themes/oomox-colors-oomox'
 make[1]: Leaving directory '/home/_3hy/.themes/oomox-colors-oomox'
-/tmp/tmp.PJyVHM8oRu
+/tmp/tmp.m02sRDvr0x
 Net/ThemeName "oomox-colors-oomox"

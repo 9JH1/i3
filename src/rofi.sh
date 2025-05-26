@@ -19,4 +19,4 @@ read -r -d '' ROFI_CONFIG << EOM
 EOM
 ROFI_PATH="/home/$USER/.config/i3/conf/rofi-colors.rasi"
 echo "$ROFI_CONFIG" > "$ROFI_PATH"
-rofi -show drun -theme "$HOME/.config/i3/conf/rofi.rasi"
+rofi -show drun -theme "$HOME/.config/i3/conf/rofi.rasi" -show-icons

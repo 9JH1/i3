@@ -18,6 +18,7 @@ nm-applet &
 blueman-applet &
 unclutter --timeout 0.5 &
 autotiling &
+
 polybar -c "/home/$USER/.config/i3/conf/polybar$mod.ini" bar_main & 
 
 if [ "$mod" = "-laptop" ]; then
@@ -26,4 +27,4 @@ if [ "$mod" = "-laptop" ]; then
 	plank & 
 	conky &
 fi
-
+/home/$USER/.config/i3/src/rofi.sh
