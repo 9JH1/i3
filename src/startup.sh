@@ -1,5 +1,4 @@
 #!/bin/bash
-killall alttab
 killall snixembed
 killall picom
 killall nm-applet
@@ -10,7 +9,7 @@ killall lxqt-policykit-agent
 killall plank & 
 
 "$HOME/.config/i3/src/screen.sh" &
-/home/$USER/.config/i3/src/wal.sh > /home/$USER/.config/i3/background_log.txt
+/home/$USER/.config/i3/src/wal.sh
 snixembed &
 picom -b --config "/home/$USER/.config/i3/conf/picom.conf" &
 nm-applet &
