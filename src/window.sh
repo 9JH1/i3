@@ -3,16 +3,16 @@
 source ~/.cache/wal/colors.sh
 # SETTINGS {{{ ---
 
-active_text_color=$color3
+active_text_color=$color0
 active_underline="true"
-active_underline_color=$color2
-inactive_text_color=$color3
+active_underline_color=$color5
+inactive_text_color=$color8
 inactive_underline="false"
 inactive_underline_color=""
-separator="·"
+separator="|"
 show="window_class" # options: window_title, window_class, window_classname
 char_limit=20 # useful with window_title
-max_windows=15 # maximum number of displayed windows
+max_windows=2 # maximum number of displayed windows
 char_case="normal" # options: normal, upper, lower
 add_spaces="true"
 resize_increment=30

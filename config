@@ -7,13 +7,14 @@ set $refresh_i3status killall -SIGUSR1 i3status
 # -- FOR WINDOW --
 for_window [window_role="alert"] floating enable
 for_window [class="feh"] floating enable
-for_window [all] title_format "%title  - <span font-family='MonaspiceRN NF' style='italic' weight='bold'>%instance</span> "
+for_window [all] title_format "%title  - <span font-family='Victor Mono' style='italic' weight='bold'>%instance</span> "
 for_window [all] title_window_icon yes
-for_window [all] border normal 5
+for_window [class="isolated_alacritty"] floating enable
 for_window [class="^xwinwrap$"] set_prop WM_CLASS "xwinwrap"
 for_window [class="steam"] floating enable
 for_window [class="steam" title="^Steam$"] floating disable
 for_window [title="Picture-in-Picture"] border pixel 0
+for_window [class="polybar"] fullscreen hide_bar
 
 # -- THEME VARIBLES -- 
 set_from_resource $background     i3wm.background
@@ -63,6 +64,7 @@ bindsym $mod+t            exec --no-startup-id "/home/$USER/.config/i3/src/float
 bindsym $mod+Shift+q      exec --no-startup-id "/home/$USER/.config/i3/src/forcequit.sh"
 bindsym $mod+Shift+s      exec --no-startup-id "/home/$USER/.config/i3/src/screenshot.sh"
 bindsym $mod+Return       exec --no-startup-id "/home/$USER/.config/i3/src/alacritty.sh"
+bindsym $mod+Shift+Return exec --no-startup-id "/home/$USER/.config/i3/src/alacritty.sh -isolate"
 bindsym $mod+z            exec --no-startup-id "boomer"
 bindsym $mod+x            exec --no-startup-id "/home/$USER/.config/i3/src/lock.sh"
 bindsym $mod+b            exec --no-startup-id "/home/$USER/.config/i3/src/alacritty_extra.sh -padding"
@@ -70,6 +72,7 @@ bindsym $mod+Shift+b      exec --no-startup-id "/home/$USER/.config/i3/src/alacr
 bindsym $mod+Ctrl+Shift+x exec --no-startup-id "shutdown now"
 bindsym $mod+Shift+t      exec --no-startup-id "/home/$USER/.config/i3/src/wal.sh"
 bindsym $mod+m            exec --no-startup-id "/home/$USER/.config/i3/src/lock.sh --image"
+bindsym $mod+g            exec --no-startup-id "dunstctl close-all"
 # -- SPECIAL KEYBINDS -- 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
@@ -91,7 +94,7 @@ client.urgent            $color1        $color1       $color7   $color2      $co
 # -- OTHER THEME SETTINGS -- 
 gaps inner 20
 gaps outer 10
-font pango: Mononoki Nerd Font 9
+font pango: Mononoki Nerd Font Bold 12
 hide_edge_borders none
 default_border normal 7
 title_align right

@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ "$(playerctl metadata --format '-' 2>/dev/null)" == *-* ]]; then
-	raw_artist=$(playerctl metadata --format '{{ artist }}')
-	raw_title=$(playerctl metadata --format '{{ title }}')
+	raw_artist=$(playerctl -a metadata --format '{{ artist }}')
+	raw_title=$(playerctl -a metadata --format '{{ title }}')
 
 	# Shorten to 10 chars max with ...
 	artist=$(echo "$raw_artist" | awk '{if(length > 10) printf "%.10s...\n", $0; else print}')
@@ -12,4 +12,3 @@ if [[ "$(playerctl metadata --format '-' 2>/dev/null)" == *-* ]]; then
 else 
 	echo ""
 fi
-M
