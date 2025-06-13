@@ -1,9 +1,9 @@
 source ~/.cache/wal/colors.sh
 opacity="45"
-background=$color0
+background=$color0 
 background_transparent="#$opacity${background:1}"
 background_alt=$color3
-foreground=$color0
+foreground=$color6
 foreground_alt=$color2
 border_color=$color4
 primary=$color5

@@ -3,10 +3,10 @@
 source ~/.cache/wal/colors.sh
 # SETTINGS {{{ ---
 
-active_text_color=$color0
+active_text_color=$color1
 active_underline="true"
-active_underline_color=$color5
-inactive_text_color=$color8
+active_underline_color=$color1
+inactive_text_color=$color6
 inactive_underline="false"
 inactive_underline_color=""
 separator="|"
