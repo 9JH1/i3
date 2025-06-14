@@ -21,7 +21,7 @@ wal -i "$first_wall" -n -a 92 -q
 # run deps 
 $HOME/.config/i3/src/dunst.sh &> /dev/null & # reload dunst 
 $HOME/.config/i3/src/reloadwalgtk.sh &> /dev/null & # reload gtk 
-$HOME/.config/i3/src/alacritty.sh no-run & # reload alacritty ( sometimes it wont update by just running pywal )
+$HOME/.config/i3/src/kitty.sh no-run & # reload alacritty ( sometimes it wont update by just running pywal )
 ln -s $HOME/.cache/wal/colors-tauon.ttheme $HOME/.local/share/TauonMusicBox/theme/pywal-tauon.ttheme & # reload tauon music box colors
 walcord &> /dev/null # reload discord
 

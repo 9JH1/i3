@@ -3,6 +3,7 @@ if [ -v $1 ]; then
 	isolate=1;
 fi
 read -r -d '' ALACRITTY_CONFIG << EOM
+
 [general]
 import = ['~/.config/i3/conf/alacritty-extra.toml']
 
@@ -43,5 +44,5 @@ fi
 if [ -v $1 ]; then 
 	alacritty --config-file "$ALACRITTY_PATH"
 else 
-	alacritty --config-file "$ALACRITTY_PATH" --class "isolated_alacritty"
+	alacritty --config-file "$ALACRITTY_PATH" --class "isolated_terminal"
 fi

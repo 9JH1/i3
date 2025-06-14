@@ -25,24 +25,8 @@
 
 	# define settings for greeter loading
 	if [ "$ZSH_ISOLATE" -eq "1" ] && [ -n "$TMUX" ] && [ "$(tmux display-message -p '#{pane_index}')" = "0" ] && [ "$(tmux display-message -p '#{window_index}')" = "0" ] && [ -z "$FASTFETCH_SHOWN" ]; then
-			export FASTFETCH_SHOWN=1
-			export ABSOLUTE_SWITCH=0
-			fastfetch=$(fastfetch --logo arch_old --config "$HOME/.config/i3/conf/fastfetch.jsonc")
-
-			if [[ $(fastfetch | wc -L) -le $(tput cols) ]]; then 
-				echo $fastfetch | lolcat -a -s 2000 > /dev/tty
-				ABSOLUTE_SWITCH=1
-			else
-				echo "Terminal too small, change font size"
-			fi
-			if [[ $ABSOLUTE_SWITCH -eq 1 ]]; then
-				read < /dev/tty
-			for i in {0..$((
-					$(get_remaining_lines)-2
-				))}; do 
-				echo
-			done
-		fi
+		fastfetch --logo arch_old --config "$HOME/.config/i3/conf/fastfetch.jsonc"
+		read < /dev/tty
 	fi
 
 echo -ne '\e[?25h'
@@ -65,14 +49,33 @@ function cds(){
 	localcd="$(cat ~/.pwd.tmp)"
 }
 function cdd(){
-	cd "$(cat ~/.pwd.tmp)"
+	cd "$localcd"
 }
 
 # move to last cd'd dir
 cds
+
 function linecount(){
 	ls -R | wc -l
 }
+
+function true-colors(){
+awk -v term_cols="${width:-$(tput cols || echo 80)}" 'BEGIN{
+    s="/\\";
+    for (colnum = 0; colnum<term_cols; colnum++) {
+        r = 255-(colnum*255/term_cols);
+        g = (colnum*510/term_cols);
+        b = (colnum*255/term_cols);
+        if (g>255) g = 510-g;
+        printf "\033[48;2;%d;%d;%dm", r,g,b;
+        printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
+        printf "%s\033[0m", substr(s,colnum%2+1,1);
+    }
+    printf "\n";
+}'
+
+}
+
 function cdr() {
 	dirs=(*/)
 	[[ $dirs ]] && cd -- "${dirs[RANDOM%${#dirs[@]}]}"

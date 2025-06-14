@@ -221,7 +221,7 @@ type = internal/date
 interval = 1
 format-foreground = $module_foreground
 format-background = $color6
-date = "%{T3}󰃭 %{T-}%{T2}%A, %l:%M %p %{T-}"
+date = "%{T3}󰃭 %{T2}%l:%M %p %{T-}"
 date-alt = %d/%m/%Y
 
 [module/date_suffix]

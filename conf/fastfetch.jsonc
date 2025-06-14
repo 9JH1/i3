@@ -3,10 +3,7 @@
   "modules": [
     "title",
     "separator",
-    "packages",
 		"terminal",
-		"terminalfont",
-		"de",
 		"wm",
     "cpu",
     "gpu",
