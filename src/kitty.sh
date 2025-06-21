@@ -1,8 +1,10 @@
 #!/bin/bash
 isolate=0;
-if [ -v $1 ]; then 
+if [ ! -n "$1" ]; then 
 	isolate=1;
+	echo "isolate enabled"
 fi
+
 read -r -d '' KITTY_CONFIG << EOM
 include ~/.config/i3/conf/kitty-extra.conf
 font_family Mononoki Nerd Font Bold
@@ -37,15 +39,16 @@ KITTY_PATH="/home/$USER/.config/i3/conf/kitty.conf"
 KITTY_COLORS=$(cat /home/$USER/.cache/wal/colors-kitty.conf | grep -v "background_opacity")
 echo "$KITTY_CONFIG" > "$KITTY_PATH"
 echo "$KITTY_COLORS" >> "$KITTY_PATH"
+
 killall -SIGUSR1 kitty
 
 if [ "$1" = "no-run" ]; then
 	exit
 fi 
 
-if [ -v $1 ]; then 
-	kitty --config="$KITTY_PATH" /bin/sh -c "export ZDOTDIR=/home/$USER/.config/i3/conf/ && export ZSH_ISOLATE=$isolate && zsh"
+if [ -n "$1" ]; then 
 
+	kitty --config="$KITTY_PATH" --class="isolated_terminal" /bin/sh -c "export ZSH_ISOLATE=$isolate && export ZDOTDIR=/home/$USER/.config/i3/conf/ && zsh"
 else 
-	kitty --config="$KITTY_PATH" --class="isolated_terminal" /bin/sh -c "zsh && exit"
+	kitty --config="$KITTY_PATH" /bin/sh -c "export ZDOTDIR=/home/$USER/.config/i3/conf/ && export ZSH_ISOLATE=$isolate && zsh"
 fi

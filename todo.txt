@@ -1,4 +1,5 @@
-fix kitty issue where blur keybind dosent work
-add pid only to cava.sh so that not every cava is killed at once :D 
-maybe fix weird kitty background issue
-fix issue where exiting isolated terminal does not close terminal
+fix weird kitty background issue
+
+re-write polybar config 
+remove use of seperator modules and add as suffix's if possible 
+add proper date-alt styles 

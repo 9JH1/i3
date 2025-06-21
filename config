@@ -3,7 +3,6 @@ set $mod Mod4
 floating_modifier $mod
 default_orientation auto
 set $refresh_i3status killall -SIGUSR1 i3status
-
 # -- FOR WINDOW --
 for_window [window_role="alert"] floating enable
 for_window [class="feh"] floating enable
@@ -59,7 +58,6 @@ bindsym $mod+e layout toggle split
 # -- EXEC KEYBINDS --
 bindsym $mod+a            exec --no-startup-id "python /home/$USER/.config/i3/src/workspace.py"
 bindsym $mod+r            exec --no-startup-id "/home/$USER/.config/i3/src/rofi.sh"
-bindsym $mod+t            exec --no-startup-id "/home/$USER/.config/i3/src/float.sh"
 bindsym $mod+Shift+q      exec --no-startup-id "/home/$USER/.config/i3/src/forcequit.sh"
 bindsym $mod+Shift+s      exec --no-startup-id "/home/$USER/.config/i3/src/screenshot.sh"
 bindsym $mod+Return       exec --no-startup-id "/home/$USER/.config/i3/src/kitty.sh"
@@ -69,7 +67,8 @@ bindsym $mod+x            exec --no-startup-id "/home/$USER/.config/i3/src/lock.
 bindsym $mod+b            exec --no-startup-id "/home/$USER/.config/i3/src/kitty_extra.sh -padding"
 bindsym $mod+Shift+b      exec --no-startup-id "/home/$USER/.config/i3/src/kitty_extra.sh -opacity"
 bindsym $mod+Ctrl+Shift+x exec --no-startup-id "shutdown now"
-bindsym $mod+Shift+t      exec --no-startup-id "/home/$USER/.config/i3/src/wal.sh"
+bindsym $mod+Shift+t      exec --no-startup-id "/home/$USER/.config/i3/src/wal.sh --all-wallpapers"
+bindsym $mod+t            exec --no-startup-id "/home/$USER/.config/i3/src/wal.sh --exclude-hidden"
 bindsym $mod+m            exec --no-startup-id "/home/$USER/.config/i3/src/lock.sh --image"
 bindsym $mod+g            exec --no-startup-id "dunstctl close-all"
 # -- SPECIAL KEYBINDS -- 

@@ -3,6 +3,7 @@
 # Maximum number of attempts to kill polybar
 MAX_ATTEMPTS=10
 ATTEMPT=1
+killall -q polybar
 
 # Check for polybar processes and attempt to kill them
 while pgrep -x polybar > /dev/null; do

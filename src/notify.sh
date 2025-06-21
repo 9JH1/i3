@@ -2,7 +2,7 @@
 #set-paused
 #is-paused
 if [ $(dunstctl is-paused) = "true" ];then
-    echo -n "off";
+    echo -n "󰂛 %{T1}off%{T-}";
 else
-    echo -n "on";
+    echo -n " %{T2}on%{T-} ";
 fi

@@ -6,12 +6,10 @@ killall blueman-applet
 killall unclutter
 killall autotiling
 killall lxqt-policykit-agent
-killall plank & 
-killall python & 
+killall plank
 
 "$HOME/.config/i3/src/screen.sh" &
-/home/$USER/.config/i3/src/wal.sh --preserve-wallpaper
-python "$HOME/.config/i3/src/fullscreen_listener.py" & 
+/home/$USER/.config/i3/src/wal.sh
 snixembed &
 picom -b --config "/home/$USER/.config/i3/conf/picom.conf" &
 nm-applet &
@@ -20,5 +18,3 @@ unclutter --timeout 0.5 &
 autotiling &
 lxqt-policykit-agent & 
 plank & 
-
-

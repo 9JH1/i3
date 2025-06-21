@@ -1,6 +1,6 @@
 #!/bin/bash 
 if [ $(playerctl status) == "Playing" ]; then
-	echo ""
+	echo -e " "
 else 
-	echo ""
+	echo -e " "
 fi

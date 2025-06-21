@@ -2,7 +2,7 @@
 source ~/.cache/wal/colors.sh
 read -r -d '' ROFI_CONFIG << EOM
 * {
-	font: "Mononoki Nerd Font 13";
+	font: "Mononoki Nerd Font 14";
 	bg0: $background;
 	bg1: $color2;
 	fg0: $color3;
@@ -19,4 +19,4 @@ read -r -d '' ROFI_CONFIG << EOM
 EOM
 ROFI_PATH="/home/$USER/.config/i3/conf/rofi-colors.rasi"
 echo "$ROFI_CONFIG" > "$ROFI_PATH"
-rofi -show drun -theme "$HOME/.config/i3/conf/rofi.rasi" -show-icons
+rofi -show drun -theme "$HOME/.config/i3/conf/rofi.rasi" -show-icons -display-drun "" 

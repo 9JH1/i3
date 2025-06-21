@@ -8,31 +8,28 @@
 	zstyle ':z4h:fzf-complete' recurse-dirs 'no'
 	zstyle ':z4h:direnv'         enable 'no'
 	zstyle ':z4h:direnv:success' notify 'yes'
+	
 	if [ "$ZSH_ISOLATE" -eq  "0" ]; then
 		zstyle ':z4h:' start-tmux command ""
 	else
 		zstyle ':z4h:' start-tmux command tmux -u -f ~/.config/i3/conf/tmux.conf new-session -A
 	fi
-	# Only show fastfetch if not already inside tmux, and not being launched by z4h for tmux
-
-	get_remaining_lines() {
-		local pos
-		pos=$(tmux display-message -p '#{cursor_y}')
-		echo $(( LINES - pos ))
-	}
+	
+	# define settings for greeter loading
 	stty -echo -icanon
 	echo -ne '\033[?25l'
-
-	# define settings for greeter loading
-	if [ "$ZSH_ISOLATE" -eq "1" ] && [ -n "$TMUX" ] && [ "$(tmux display-message -p '#{pane_index}')" = "0" ] && [ "$(tmux display-message -p '#{window_index}')" = "0" ] && [ -z "$FASTFETCH_SHOWN" ]; then
-		fastfetch --logo arch_old --config "$HOME/.config/i3/conf/fastfetch.jsonc"
-		read < /dev/tty
+	if [ -n "$TMUX" ] && [ "$(tmux display-message -p '#{pane_index}')" = "0" ] && [ "$(tmux display-message -p '#{window_index}')" = "0" ] && [ -z "$FASTFETCH_SHOWN" ]; then
+		#fastfetch --logo arch_old --config "$HOME/.config/i3/conf/fastfetch.jsonc" | lolcat > /dev/tty 
+		#read > /dev/tty 
+		if [ "$ZSH_ISOLATE" = "1" ]; then
+			fastfetch --logo $(cat ~/.i3wallpaper) --config "$HOME/.config/i3/conf/fastfetch.jsonc" --logo-width 30
+			read > /dev/tty
+		fi
 	fi
+	echo -ne '\e[?25h'
+	stty sane
 
-echo -ne '\e[?25h'
-stty sane
-
-z4h init
+	z4h init
 
 # custom cd functions for better navigation
 export localcd=""
