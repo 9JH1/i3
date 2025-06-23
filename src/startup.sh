@@ -18,3 +18,4 @@ unclutter --timeout 0.5 &
 autotiling &
 lxqt-policykit-agent & 
 plank & 
+xset r rate 200 35 &

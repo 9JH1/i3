@@ -10,9 +10,9 @@ secondary=$color4
 module_foreground=$color0
 alert="#ff0000"
 disabled=$color5
-level0=$module_foreground
-level1=$module_foreground 
-level2=$alert
+level0=$color4 
+level1=$color5 
+level2=$color6
 level3=$alert
 
 read -r -d '' POLYBAR_FONT_CONFIG << EOM 
@@ -40,7 +40,7 @@ $POLYBAR_FONT_CONFIG
 
 [bar/bar_dock]
 bottom =  true 
-modules-right = dock_prefix ram ram_seperator cpu cpu_seperator network dock_suffix
+modules-right = dock_prefix network network_seperator ram ram_seperator cpu dock_suffix
 override-redirect = true
 wm-restack = i3
 $POLYBAR_FONT_CONFIG
@@ -67,7 +67,6 @@ label = "%{T3}󰒮%{T-}"
 click-left = playerctl previous
 format = "<label>"
 format-suffix = " "
-format-prefix = " "
 format-background = $color1
 format-foreground = $module_foreground
 
@@ -141,28 +140,6 @@ format = <label>
 format-foreground=$color1
 format-background=$color3
 
-[module/ram]
-type=internal/memory
-interval=5
-warn-percentage=95 
-label = %percentage_used%%
-format = "%{T3}  %{T-}<label> <bar-used>"
-format-background = $color1
-format-foreground = $module_foreground
-label-warn = !%free% left
-format-warn = "%{T3} %{T-}<label-warn> <label-warn>"
-bar-used-indicator = 
-bar-used-width = 6
-bar-used-foreground-0 = $level0 
-bar-used-foreground-1 = $level1 
-bar-used-foreground-2 = $level2 
-bar-used-foreground-3 = $level3
-bar-used-fill = "%{T3}▐%{T-}" 
-bar-used-empty = "%{T3}▐%{T-}" 
-bar-used-empty-foreground = $color1
-format-suffix = " "
-
-
 [module/dock_prefix]
 type=custom/text
 label = "%{T4}%{T-}"
@@ -173,8 +150,8 @@ format-foreground = $color1
 type=custom/text
 label = "%{T4}%{T-}"
 format = <label>
-format-foreground=$color2
-format-background=$color1 
+format-foreground=$color3
+format-background=$color2 
 
 [module/cpu]
 type=internal/cpu
@@ -182,10 +159,10 @@ interval = 5
 warn-percentage = 95
 label-warn = "%percentage%%"
 format-warn = "%{T3} %{T-}<label-warn> <bar-load>"
-format-background = $color2
+format-background = $color3
 format-foreground = $module_foreground
 format-warn-foreground = $alert
-format-warn-background = $color2
+format-warn-background = $color3
 label = "%percentage%%"
 bar-load-indicator = 
 bar-load-width = 6
@@ -206,14 +183,42 @@ format = <label>
 format-foreground=$color3 
 format-background=$color2
 
+
 [module/network]
 type = internal/network
 interface = enp5s0
-format-connected-background = $color3 
+format-connected-background = $color1 
 format-connected-foreground = $module_foreground 
 label-connected = %{T3} %{T-}%upspeed% %{T3} %{T-}%downspeed%
 interval = 5
 
+[module/network_seperator]
+type=custom/text
+label = "%{T4}%{T-}"
+format = <label>
+format-foreground=$color2 
+format-background=$color1
+
+[module/ram]
+type=internal/memory
+interval=5
+warn-percentage=95 
+label = %percentage_used%%
+format = "%{T3}  %{T-}<label> <bar-used>"
+format-background = $color2
+format-foreground = $module_foreground
+label-warn = !%free% left
+format-warn = "%{T3} %{T-}<label-warn> <label-warn>"
+bar-used-indicator = 
+bar-used-width = 6
+bar-used-foreground-0 = $level0 
+bar-used-foreground-1 = $level1 
+bar-used-foreground-2 = $level2 
+bar-used-foreground-3 = $level3
+bar-used-fill = "%{T3}▐%{T-}" 
+bar-used-empty = "%{T3}▐%{T-}" 
+bar-used-empty-foreground = $color1
+format-suffix = " "
 
 [module/dock_suffix]
 type = custom/text 

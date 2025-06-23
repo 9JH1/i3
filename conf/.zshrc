@@ -72,7 +72,6 @@ awk -v term_cols="${width:-$(tput cols || echo 80)}" 'BEGIN{
 }'
 
 }
-
 function cdr() {
 	dirs=(*/)
 	[[ $dirs ]] && cd -- "${dirs[RANDOM%${#dirs[@]}]}"
@@ -84,3 +83,6 @@ alias tree='tree -a -I .git'
 function ls {
 	lsd $@ --color=auto -r -t
 }
+
+
+eval "$(zoxide init zsh)"
