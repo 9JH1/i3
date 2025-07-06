@@ -1,57 +1,93 @@
 #!/bin/bash
-first_wal=""
-WALLPAPER_DIR="/home/$USER/Pictures/Wallpapers/"
 
-if [[ ! -d "$WALLPAPER_DIR" ]]; then
+is_video() {
+	local file="$1"
+  video_extensions="|gif|mp4|mkv|avi|mov|wmv|flv|webm|mpeg|mpg|m4v|3gp"
+  if echo "$file" | grep -i -E "\.($video_extensions)$"; then return 0; fi
+  return 1;
+}
+
+first_wall=""
+killall motionlayer
+if [[ "$1" = "--custom" ]];then
+	if is_video "$2";then
+		echo "detected video"
+		# VIDEO WALLPAPER SECION (https://github.com/9jh1/C -> projects/motionlayer/src)
+		motionlayer --path "$2" --frame-out "$HOME/.frame.jpg" & 
+		sleep 1
+		first_wall="$HOME/.frame.jpg"
+		echo "$first_wall" > $HOME/.i3wallpaper
+	else 
+		echo "detected image"
+		first_wall="$2";
+	fi
+else 
+	WALLPAPER_DIR="/home/$USER/Pictures/Wallpapers/"
+	if [[ ! -d "$WALLPAPER_DIR" ]]; then
     echo "Error: Wallpaper directory $WALLPAPER_DIR does not exist"
     exit 1
+	fi
+	if [[ -n "$1" ]]; then
+  	echo "Argument found"
+  	if [[ "$1" = "--exclude-hidden" ]]; then
+    	echo "Picking non-hidden wallpaper"
+  		wallpaper=$(find -L "$WALLPAPER_DIR" -type f -not -path "*/.*/*" | grep -v ".git" | shuf -n 1)
+			$HOME/.config/i3/src/wal.sh --custom "$wallpaper";
+			exit 
+  	else
+			echo "Picking universal wallpaper"
+			wallpaper=$(find -L "$WALLPAPER_DIR" -type f -path "*/.*/*" | grep -v ".git" | shuf -n 1)
+			$HOME/.config/i3/src/wal.sh --custom "$wallpaper"
+			exit
+		fi
+	else 
+		echo "No argument provided, using previous wallpaper"
+		first_wall=$(cat ~/.i3wallpaper)
+	fi 
 fi
 
-if [[ -n "$1" ]]; then
-  echo "Argument found"
-  if [[ "$1" = "--exclude-hidden" ]]; then
-    echo "Picking non-hidden wallpaper"
-  	first_wall=$(find -L "$WALLPAPER_DIR" -type f -not -path "*/.*/*" | shuf -n 1)
-  else
-		echo "Picking universal wallpaper"
-		first_wall=$(find -L "$WALLPAPER_DIR" -type f -path "*/.*/*" | shuf -n 1)
-	fi
-	touch $HOME/.i3wallpaper
-	echo "$first_wall" > $HOME/.i3wallpaper
-else 
-	echo "No argument provided, using previous wallpaper"
-	first_wall=$(cat ~/.i3wallpaper)
-fi 
-
-# VIDEO WALLPAPER SECION (https://github.com/9jh1/C -> projects/motionlayer/src)
-#killall motionlayer
-#motionlayer --geometry "1920x1080+0+0" --path "/drive/backgrounds/c8d502bf002baf521032f63869bac47472ef2f53.webm" --randomize --zoom 0.1 --frame-out "$HOME/.frame.jpg" & 
-#sleep 1 
-#first_wall="$HOME/.frame.jpg"
-#echo "$first_wall" > $HOME/.i3wallpaper
 export XDG_CACHE_HOME="$HOME/.cache" &> /dev/null &
+touch $HOME/.i3wallpaper
 
-wal -i "$first_wall" -n -a 92
+# only one dependancy is run before the rest, that is polybar 
+# when wal is run it reloads polybar but we end up reloading it 
+# manually using a kill-replace style script, if we kill it here
+# then wal will not reload it, we dont want wall to reload it 
+# because it animates the bar dissapearing twice which is not 
+# ideal for visual candy.
+echo "Killing Polybar"
+# $HOME/.config/i3/src/kill_polybar.sh
 
-# run deps 
-$HOME/.config/i3/src/dunst.sh &> /dev/null & # reload dunst 
-$HOME/.config/i3/src/reloadwalgtk.sh &> /dev/null & # reload gtk 
-$HOME/.config/i3/src/kitty.sh no-run & # reload alacritty ( sometimes it wont update by just running pywal )
-ln -s $HOME/.cache/wal/colors-tauon.ttheme $HOME/.local/share/TauonMusicBox/theme/pywal-tauon.ttheme & # reload tauon music box colors
-walcord &> /dev/null # reload discord
-# install pywalfox for firefox colors it auto updates
+# plank is a visual child process so it has to go too
+#killall plank 
 
-$HOME/.config/i3/src/kill_polybar.sh
-$HOME/.config/i3/src/polybar.sh & 
-$HOME/.config/i3/src/fullscreen_listener.sh &
+# run wal 
+echo "Running PyWal"
+echo "$first_wall" > $HOME/.i3wallpaper
+wal -i "$first_wall" -t -s -n -a 92
+echo "Done"
 
-# set solid colors
-source "$HOME/.cache/wal/colors.sh"
+# set color
+echo "Setting secondary monitor colors"
+source ~/.cache/wal/colors.sh
 hex="$background"
 solid_color_ppm=$(mktemp --suffix=.ppm)
 printf "P6\n1 1\n255\n\\x${hex:1:2}\\x${hex:3:2}\\x${hex:5:2}" > $solid_color_ppm
-(feh --bg-scale "$solid_color_ppm" && rm -f "$solid_color_ppm" ) 
+(feh --bg-scale "$solid_color_ppm" && rm -f "$solid_color_ppm" &)
+if is_video "$2"; then  echo "skipping xwallpaper set"
+else
+	# set wallpaper on primary monitor
+	echo "Setting primary wallpaper"
+	output=$(xrandr | grep "primary" | awk '{print $1}')
+	echo "Using monitor $output"
+	feh --bg-fill "$first_wall"
 
-# set wallpaper on primary monitor
-xwallpaper --output $(xrandr | grep "primary" | awk '{print $1}')  --zoom "$first_wall" > /dev/null 2>&1
+	#xwallpaper --output  $output --zoom "$first_wall"
+	echo "Set Wallpaper"
+fi
 
+
+# start deps 
+echo "Running Deps"
+echo "Done"
+# ($HOME/.config/i3/src/wal_deps.sh &>/dev/null) &

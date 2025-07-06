@@ -38,4 +38,3 @@ frame_color = "#ff0000"
 EOM
 killall dunst
 dunst -config <(echo "$DUNSTRC")
-notify-send "Changed Wal Colors"

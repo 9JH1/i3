@@ -9,9 +9,15 @@ killall lxqt-policykit-agent
 killall plank
 
 "$HOME/.config/i3/src/screen.sh" &
-/home/$USER/.config/i3/src/wal.sh
+$HOME/.config/i3/src/wal.sh
+
+
+#walltaker 
+$HOME/Pictures/Wallpapers/.walltaker/walltaker.sh --id "46554" &
+
+picom --config "$HOME/.config/i3/conf/picom.conf" --experimental-backends &
 snixembed &
-picom -b --config "/home/$USER/.config/i3/conf/picom.conf" &
+#picom -b --config "$HOME/.config/i3/conf/picom.conf" &
 nm-applet &
 blueman-applet &
 unclutter --timeout 0.5 &

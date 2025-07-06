@@ -29,6 +29,7 @@ background=$background_transparent
 border-color = $color4
 foreground = $module_foreground
 fixed-center = true
+padding = 10pt
 EOM
 
 read -r -d '' POLYBAR_CONFIG << EOM
@@ -225,7 +226,6 @@ type = custom/text
 format = "%{T4}%{T-}"
 format-background = $background_transparent
 format-foreground = $color3 
-format-suffix = "  "
 
 [module/systray]
 type = internal/tray
@@ -258,12 +258,10 @@ type=custom/text
 label = "%{T4}%{T-}"
 format-background=$background_transparent
 format-foreground = $color2
-format-suffix = "  "
 
 [module/left_prefix]
 type = custom/text 
 format = "%{T4}%{T-}"
-format-prefix = "  "
 format-background = $background_transparent 
 format-foreground = $color1 
 
