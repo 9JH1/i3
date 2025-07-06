@@ -3,7 +3,6 @@
 window {
     location:   center;
     width:      480;
-
     background-color:   @bg0;
 }
 
@@ -12,15 +11,11 @@ inputbar {
     padding:    8px;
 
     background-color:   @bg1;
-		foreground-color:   @fg1;
+		foreground-color:   @fg1; 
 }
 
 prompt, entry, element-icon, element-text {
     vertical-align: 0.5;
-}
-
-prompt {
-    text-color: @fg1;
 }
 
 textbox {
@@ -38,6 +33,7 @@ listview {
 
 element {
     padding:    8px;
+		margin:     4px;
     spacing:    8px;
 }
 
@@ -63,6 +59,7 @@ element selected {
 
 element selected normal, element selected active {
     background-color:   @accent-color;
+		border-radius: 0px 20px 20px 0px;
 }
 
 element selected urgent {
