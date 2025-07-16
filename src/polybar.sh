@@ -21,8 +21,8 @@ font-3 = "Mononoki Nerd Font:style=Regular:size=25;5.1"
 font-2 = "Mononoki Nerd Font:style=Regular:size=16;2.1"
 font-1 = "Victor Mono Nerd Font:style=Bold Italic:size=13;2.5"
 font-0 = "Mononoki Nerd Font:style=Bold:size=13;2.1"
-dpi = 120 
-height = 4%
+dpi = 110
+height = 3%
 border-size = 2pt
 line-size = 2
 background=$background_transparent

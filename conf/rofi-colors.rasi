@@ -1,11 +1,11 @@
 * {
 	font: "Mononoki Nerd Font 14";
-	bg0: #110a19;
-	bg1: #998E9E;
-	fg0: #ABA6AF;
-	fg1: #110a19;
-	accent-color: #ABA6AF;
-	urgent-color: #C17BA0;
+	bg0: #342c41;
+	bg1: #04CEFE;
+	fg0: #16DCFE;
+	fg1: #342c41;
+	accent-color: #16DCFE;
+	urgent-color: #60BAF0;
 	background-color: transparent;
 	text-color: @fg0;
 

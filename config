@@ -6,7 +6,7 @@ set $refresh_i3status killall -SIGUSR1 i3status
 # -- FOR WINDOW --
 for_window [window_role="alert"] floating enable
 for_window [class="feh"] floating enable
-for_window [all] title_format "%title  - <span font-family='Victor Mono' style='italic' weight='bold'>%instance</span> "
+for_window [all] title_format "%title  - <span font-family='Victor Mono Nerd Font' style='italic' weight='bold'>%instance</span> "
 for_window [all] title_window_icon yes
 for_window [class="isolated_terminal"] floating enable
 for_window [class="^xwinwrap$"] set_prop WM_CLASS "xwinwrap"

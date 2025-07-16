@@ -17,6 +17,9 @@ ueberzug
 lxqt-policykit
 autotiling
 xdotool 
+unclutter
+playerctl
+jgmenu
 
 AUR (install yay): 
 walcord 
