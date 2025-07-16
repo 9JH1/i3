@@ -16,10 +16,11 @@ xrandr
 ueberzug 
 lxqt-policykit
 autotiling
+xdotool 
 
 AUR (install yay): 
 walcord 
-pywalfox 
+python-pywalfox 
 python-pywal16
 picom-yaoccc-git
 nerdfonts-installer-bin
