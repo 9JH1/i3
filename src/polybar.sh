@@ -19,7 +19,7 @@ read -r -d '' POLYBAR_FONT_CONFIG << EOM
 font-4 = "Mononoki Nerd Font:style=Regular:size=18;3.2"
 font-3 = "Mononoki Nerd Font:style=Regular:size=25;5.1"
 font-2 = "Mononoki Nerd Font:style=Regular:size=16;2.1"
-font-1 = "Victor Mono:style=Bold Italic:size=13;2.5"
+font-1 = "Victor Mono Nerd Font:style=Bold Italic:size=13;2.5"
 font-0 = "Mononoki Nerd Font:style=Bold:size=13;2.1"
 dpi = 120 
 height = 4%
