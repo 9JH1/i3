@@ -14,7 +14,8 @@ python-i3ipc
 lsd
 xrandr 
 ueberzug 
-
+lxqt-policykit
+autotiling
 
 AUR (install yay): 
 walcord 
