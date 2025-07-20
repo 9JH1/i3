@@ -20,6 +20,7 @@ xdotool
 unclutter
 playerctl
 jgmenu
+dunst
 
 AUR (install yay): 
 walcord 
@@ -28,3 +29,7 @@ python-pywal16
 picom-yaoccc-git
 nerdfonts-installer-bin
 snixembed
+
+OTHER CONFIG:
+sudo mv ~/.config/i3/conf/plank.theme /usr/share/plank/themes/Transparent/dock.theme 
+
