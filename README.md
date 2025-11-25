@@ -37,3 +37,5 @@ xrandr
 victor-mono
 nerdfonts-installer
 ```
+
+from the nerdfonts installer you must install, Monaspace and Mononoki
